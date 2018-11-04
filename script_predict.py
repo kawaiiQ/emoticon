@@ -44,7 +44,8 @@ def get_pic(sentence, sess, input_feature, cls_id, vocabulary, cls_path):
     path = path.replace('\\', '/')
 
     file_list = os.listdir(path)
-    file_list.remove('synonyms')
+    if 'synonyms' in file_list:
+        file_list.remove('synonyms')
     index = random.randint(0, len(file_list)-1)
     return path + '/' + file_list[index]
 
