@@ -10,6 +10,8 @@ def scan_pics(path, tags, ignore_non_folder=False):
     for item in items:
         if item[0] == '.':
             continue
+        if item == 'synonyms':
+            continue
         new_path = os.path.join(path, item)
         if os.path.isdir(new_path):
             tags.append(item)
